@@ -42,7 +42,7 @@ func main() {
 	// Setup database (optional - tidak menghalangi server)
 	db, err := database.InitDB(config.DBConn)
 	if err != nil {
-		log.Println("Warning: Failed to initialize database:", err)
+		log.Fatalf("Failed to initialize database: %v", err)
 	} else {
 		defer db.Close()
 	}
